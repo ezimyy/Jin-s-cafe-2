@@ -28,6 +28,13 @@ body {
   color: var(--on-surface);
 }
 
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .poster-container {
   padding: 2rem;
   width: 100%;

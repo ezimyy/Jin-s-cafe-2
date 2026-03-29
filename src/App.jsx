@@ -9,14 +9,15 @@ function App() {
           <div className="poster-brand">The Noir Artisanal</div>
           
           <h1 className="poster-title">
-            Black Sesame<br />
+            Signature Black<br />
+            Sesame<br />
             Cream Latte
           </h1>
           
           <div className="poster-image-wrapper">
             {/* The image should be replaced with a real high-quality latte image */}
             <img 
-              src="https://images.unsplash.com/photo-1620055006093-3ea76bd59d28?q=80&w=1471&auto=format&fit=crop" 
+              src="/Jin-s-cafe-2/poster.png" 
               alt="Black Sesame Cream Latte" 
               className="poster-image"
             />
@@ -24,7 +25,7 @@ function App() {
           </div>
           
           <div className="poster-footer">
-            <h2 className="poster-subtitle">시그니처 흑임자 크림 라떼 출시</h2>
+            <h2 className="poster-subtitle">Available Exclusive Today</h2>
             <div className="poster-ornament">✦</div>
           </div>
         </div>
