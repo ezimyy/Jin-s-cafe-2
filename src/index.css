@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --background: #0e0e0e;
+  --surface: #131313;
+  --primary: #c8c6c5;
+  --primary-dim: #bab8b8;
+  --secondary: #be957a;
+  --on-surface: #e7e5e5;
+  
+  --font-serif: 'Noto Serif', serif;
+  --font-sans: 'Manrope', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--on-surface);
+}
+
+.poster-container {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* A1 Aspect Ratio (1:1.414) */
+.poster {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1.414;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.poster-content {
+  position: absolute;
+  inset: 0;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.poster-brand {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: var(--secondary);
+  font-weight: 500;
+  margin-bottom: auto;
+}
+
+.poster-title {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  z-index: 2;
+  letter-spacing: -0.02em;
+}
+
+.poster-image-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: -10%;
+  width: 90%;
+  height: 75%;
+  z-index: 1;
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  opacity: 0.9;
+  mix-blend-mode: luminosity;
+  filter: contrast(1.2) brightness(0.8);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--background) 0%, transparent 40%);
+}
+
+.poster-footer {
+  margin-top: auto;
+  z-index: 2;
+  padding-bottom: 1rem;
+}
+
+.poster-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0em;
+  color: var(--primary-dim);
+  border-left: 2px solid var(--secondary);
+  padding-left: 1.25rem;
+  line-height: 1.4;
+}
+
+.poster-ornament {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.poster-title {
+  animation: fadeIn 1.5s ease-out 0.2s both;
+}
+
+.poster-image {
+  animation: fadeIn 2s ease-out 0.5s both;
+}
+
+.poster-subtitle {
+  animation: fadeIn 1.5s ease-out 1s both;
+}
+
+@media (max-width: 768px) {
+  .poster-content {
+    padding: 2.5rem 1.5rem;
+  }
+  .poster-title {
+    font-size: 3rem;
+  }
+}
